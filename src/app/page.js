@@ -1,7 +1,11 @@
-import Image from "next/image";
+import Hero from './components/hero.jsx';
+import Service from './components/service.jsx';
 
 export default function Home() {
   return (
-  <h1>Hii World</h1>
+    <div className='w-10/12 mx-auto'>
+      <Hero />
+      <Service />
+    </div>
   );
 }
