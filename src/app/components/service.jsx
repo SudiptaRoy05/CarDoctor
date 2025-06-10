@@ -1,5 +1,6 @@
 import dbConnect, { collectionName } from "@/lib/dbConnect";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Service() {
     // const services = [
@@ -199,33 +200,18 @@ export default async function Service() {
                                     <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
                                         ${service.price}
                                     </span>
+                                    
                                 </div>
-
-                                {/* <p className="mt-3 text-gray-600 line-clamp-3">
-                                    {service.description}
-                                </p> */}
-
-                                {/* <div className="mt-4">
-                                    <h4 className="font-medium text-gray-900">Facilities:</h4>
-                                    <ul className="mt-2 space-y-2">
-                                        {service.facility.map((facility, index) => (
-                                            <li key={index} className="flex items-start">
-                                                <svg className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span className="text-sm text-gray-600">
-                                                    <span className="font-medium">{facility.name}</span>: {facility.details}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div> */}
 
                                 <div className="mt-6">
-                                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300">
+                                    <Link
+                                        href={`/services/${service._id}`}
+                                        className="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300"
+                                    >
                                         Book Service
-                                    </button>
+                                    </Link>
                                 </div>
+
                             </div>
                         </div>
                     ))}
