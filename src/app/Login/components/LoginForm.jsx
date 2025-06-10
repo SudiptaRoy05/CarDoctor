@@ -1,8 +1,28 @@
+'use client';
+import { signIn } from "next-auth/react"
+import { useRouter } from "next/router";
 
 export default function LoginForm() {
+    const router = useRouter();
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+        const { email, password } = data;
+        // console.log(data);
+        try{
+            await signIn('credentials', { email, password })
+            router.push('/'); // Redirect to home page after successful login
+        }catch (error) {
+            console.error("Login failed:", error);
+            // Handle login failure (e.g., show an error message)
+        }
+        
+
+    }
     return (
         <div>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                         Email address
