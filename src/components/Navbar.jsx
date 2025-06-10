@@ -51,8 +51,9 @@ export default function Navbar() {
                 </div>
 
                 {/* Right side */}
-                <div className="navbar-end">
-                    <a className="btn" href="#">Button</a>
+                <div className="navbar-end space-x-4">
+                    <Link href='/Login' className="btn" >Login</Link>
+                    <Link className="btn" href="/Register">Register</Link>
                 </div>
             </div>
         </div>

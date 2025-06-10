@@ -4,6 +4,7 @@ let cachedClient = null; // Prevents re-connecting on every call
 
 export const collectionName = {
     serviceCollection: 'service',
+    userCollection: 'user',
 }
 
 export default async function dbConnect(collectionName) {
